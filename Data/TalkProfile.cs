@@ -1,9 +1,5 @@
 ﻿using AutoMapper;
 using CoreCodeCamp.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CoreCodeCamp.Data
 {
@@ -19,8 +15,7 @@ namespace CoreCodeCamp.Data
                 .ForMember(t => t.CompanyUrl, c => c.MapFrom(m => m.Speaker.CompanyUrl))
                 .ForMember(t => t.BlogUrl, c => c.MapFrom(m => m.Speaker.BlogUrl))
                 .ForMember(t => t.Twitter, c => c.MapFrom(m => m.Speaker.Twitter))
-                .ForMember(t => t.GitHub, c => c.MapFrom(m => m.Speaker.GitHub));
-
+                .ForMember(t => t.GitHub, c => c.MapFrom(m => m.Speaker.GitHub)).ReverseMap();
         }
     }
 }
